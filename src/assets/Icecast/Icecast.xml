@@ -1,0 +1,37 @@
+<icecast>
+    <limits>
+        <sources>1</sources>
+		<!--keep source always alive -->
+		<source-timeout>-1</source-timeout>
+		<!--for smallest latency -->
+		<burst-size>0</burst-size>
+    </limits>
+    <authentication>
+        <source-password>hackme</source-password>
+        <relay-password>hackme</relay-password>
+        <admin-user>admin</admin-user>
+        <admin-password>hackme</admin-password>
+    </authentication>
+    <directory>
+        <yp-url-timeout>15</yp-url-timeout>
+        <yp-url>http://dir.xiph.org/cgi-bin/yp-cgi</yp-url>
+    </directory>
+    <hostname>localhost</hostname>
+    <listen-socket>
+        <port>8000</port>
+    </listen-socket>
+    <paths>
+        <logdir>@localstatedir@/log/@PACKAGE@</logdir>
+        <webroot>@pkgdatadir@/web</webroot>
+        <adminroot>@pkgdatadir@/admin</adminroot>
+        <alias source="/" destination="/status.xsl"/>
+    </paths>
+    <logging>
+        <accesslog>access.log</accesslog>
+        <errorlog>error.log</errorlog>
+        <loglevel>information</loglevel> <!-- "debug", "information", "warning", or "error" -->
+    </logging>
+    <http-headers>
+        <header type="cors" name="Access-Control-Allow-Origin" />
+    </http-headers>
+</icecast>

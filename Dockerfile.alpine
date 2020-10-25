@@ -1,0 +1,13 @@
+FROM mikebrady/shairport-sync
+
+RUN apk -U add \
+	icecast \
+	ezstream
+
+RUN rm -rf /var/cache/apk/*
+RUN rm -rf  /lib/apk/db/*
+
+COPY ./src/* /ShairStream/
+COPY ./src/assets/shairport/* /etc/
+
+ENTRYPOINT ["/ShairStream/scripts/start.sh"]

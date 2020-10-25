@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ezstream>
+	<servers>
+		<server>
+			<hostname>127.0.0.1</hostname>
+			<password>hackme</password>
+		</server>
+	</servers>
+	<streams>
+		<stream>
+			<mountpoint>/YourStream</mountpoint>
+			<format>MP3</format>
+		</stream>
+	</streams>
+	<intakes>
+		<intake>
+			<type>stdin</type>
+		</intake>
+	</intakes>
+</ezstream>
