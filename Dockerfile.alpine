@@ -10,4 +10,6 @@ RUN rm -rf  /lib/apk/db/*
 COPY ./src/* /ShairStream/
 COPY ./src/assets/shairport/* /etc/
 
-ENTRYPOINT ["/ShairStream/scripts/start.sh"]
+RUN chmod +x /ShairStream/start.sh
+
+ENTRYPOINT ["/ShairStream/start.sh"]
