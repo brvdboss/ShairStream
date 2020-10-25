@@ -2,7 +2,8 @@ FROM mikebrady/shairport-sync
 
 RUN apk -U add \
 	icecast \
-	ezstream
+	ezstream \
+	lame
 
 RUN rm -rf /var/cache/apk/*
 RUN rm -rf  /lib/apk/db/*

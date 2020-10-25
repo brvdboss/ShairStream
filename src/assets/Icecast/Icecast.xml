@@ -21,10 +21,11 @@
         <port>8000</port>
     </listen-socket>
     <paths>
-        <logdir>@localstatedir@/log/@PACKAGE@</logdir>
-        <webroot>@pkgdatadir@/web</webroot>
-        <adminroot>@pkgdatadir@/admin</adminroot>
-        <alias source="/" destination="/status.xsl"/>
+		<basedir>/usr/share/icecast</basedir>
+        <logdir>/var/log/icecast</logdir>                                      $
+        <webroot>/usr/share/icecast/web</webroot>                              $
+        <adminroot>/usr/share/icecast/admin</adminroot>
+        <alias source="/foo" destination="/bar"/>
     </paths>
     <logging>
         <accesslog>access.log</accesslog>
@@ -34,4 +35,11 @@
     <http-headers>
         <header type="cors" name="Access-Control-Allow-Origin" />
     </http-headers>
+	<security>                                                                                                                                                                                                                                                                         
+        <chroot>0</chroot>                                                                                                                                                                                                                                                             
+        <changeowner>                                                                                                                                                                                                                                                                  
+            <user>icecast</user>                                                                                                                                                                                                                                                       
+            <group>icecast</group>                                                                                                                                                                                                                                                     
+        </changeowner>                                                                                                                                                                                                                                                                 
+    </security>
 </icecast>
