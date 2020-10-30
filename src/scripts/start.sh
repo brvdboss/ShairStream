@@ -1,7 +1,10 @@
 #!/bin/sh
 
+#enable syslogd to make sure we capture the logging from shairport-sync
+syslogd
+
 #start the ShairPlay server with the original script
-/start.sh $@ &
+/start.sh -vvv $@ &
 
 sleep 5
 
